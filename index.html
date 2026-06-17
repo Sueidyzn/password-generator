@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gerador de Senhas</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <main class="site-main">
+        <section class="password-generator">
+            <form  class="generator-form">
+                <div class="password-box">
+                    <span class="password-text" id="senha-out">clique em gerar</span>
+                    <button type="button" class="copy-btn" id="copy-btn">copiar</button>
+                </div>
+
+                <div class="strength-bar-track">
+                    <div class="strength-bar-fill" id="bar"></div>
+                </div>
+                
+                <div class="strength-label">
+                    <span id="strength-label"></span>
+                    <span id="entropy-out"></span>
+                </div>
+
+                <div class="controls">
+                    <div class="control-row">
+                        <label for="len" class="control-label">Comprimento</label>
+                        <input type="range" id="len" min="6" max="64" value="34" step="1">
+                        <span class="control-value" id="len-out">34</span>
+                    </div>
+                </div>
+
+                <div class="section-title">Caracteres</div>
+                <div class="toggle-grid">
+                    <label class="toggle-item">
+                        <input type="checkbox" id="opt-upper" checked> maiúsculas (A-Z)
+                    </label>
+                    <label class="toggle-item">
+                        <input type="checkbox" id="opt-lower" checked> minúsculas (a-z)
+                    </label>
+                    <label class="toggle-item">
+                        <input type="checkbox" id="opt-digits" checked> números (0-9)
+                    </label>
+                    <label class="toggle-item">
+                        <input type="checkbox" id="opt-symbols" checked> símbolos (!@$..)
+                    </label>
+                    <label class="toggle-item">
+                        <input type="checkbox" id="opt-ambiguos" checked> excluir ambíguos
+                    </label>
+                </div>
+
+                <button type="button" class="gen-btn" id="gen-btn">⟳ gerar senha</button>
+            </form>
+        </section>
+    </main>
+
+    <script src="js/script.js"></script>
+</body>
+</html>
