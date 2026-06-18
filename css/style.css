@@ -76,8 +76,10 @@ body {
 }
 
 .password-box .password-text {
+  max-width: 80%;
+  overflow-wrap: break-word;
   font-family: monospace;
-  font-size: 96%;
+  font-size: clamp(0.01rem, 1.83vw, 0.8rem);
   font-weight: 500;
 }
 
@@ -216,10 +218,11 @@ body {
   margin-top: 1.25rem;
   width: 100%;
   padding: 10px;
-  background: transparent;
+  background: #0f1014;
+  outline: none;
   text-transform: capitalize;
   /* border: 1px solid #05040c62;  */
-  border: #6363631f solid 0.01px;
+  border: #6363630e solid 0.01px;
   color: #a6a6a6;
   border-radius: 8px;
   cursor: pointer;
@@ -229,13 +232,8 @@ body {
 }
 
 .gen-btn:hover {
-  background: #0f1014;
+  background: #101217;
   color: #ebebeb;
-}
-
-/* Checkbox Customizado - .generator-form .toggle-grid .toggle-item */
-
-.toggle-item {
 }
 
 .toggle-item input[type="checkbox"] {
@@ -278,4 +276,102 @@ body {
 .site-main{
     position: relative;
     z-index: 1;
+}
+
+/* Tablet */
+@media (max-width: 768px) {
+
+  .password-generator .generator-form {
+    max-width: none;
+    padding: 1.25rem;
+  }
+
+  .controls .control-row {
+    gap: 8px;
+  }
+
+  .controls .control-row .control-label {
+    min-width: 80px;
+    font-size: 13px;
+  }
+
+  .toggle-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .toggle-item {
+    font-size: 13px;
+  }
+
+  .copy-btn {
+    width: 80px;
+    font-size: 13px;
+  }
+}
+
+/* Celulares */
+@media (max-width: 480px) {
+
+  .password-generator .generator-form {
+    width: 95%;
+    padding: 1rem;
+    border-radius: 10px;
+  }
+
+  .generator-form .password-box {
+    gap: .75rem;
+    padding-inline: .75rem;
+  }
+
+  .password-box .password-text {
+    max-width: none;
+    flex: 1;
+    min-width: 0;
+    font-size: 0.7rem;
+  }
+
+  .password-box .copy-btn {
+    width: 70px;
+    padding-inline: .5rem;
+    font-size: 12px;
+    flex-shrink: 0;
+  }
+
+  .controls .control-row {
+    flex-wrap: wrap;
+    gap: 6px;
+  }
+
+  .controls .control-row .control-label {
+    min-width: 100%;
+  }
+
+  .controls .control-row .control-value {
+    min-width: auto;
+  }
+
+  .generator-form .strength-label {
+    font-size: 12px;
+  }
+
+  .generator-form .gen-btn {
+    font-size: 14px;
+  }
+}
+
+/* Telas Muito Pequenas */
+@media (max-width: 320px) {
+
+  .password-box {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .password-box .copy-btn {
+    width: 100%;
+  }
+
+  .generator-form .toggle-grid {
+    grid-template-columns: 1fr;
+  }
 }
